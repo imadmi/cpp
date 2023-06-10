@@ -1,27 +1,23 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/10 12:11:08 by imimouni          #+#    #+#              #
-#    Updated: 2023/06/10 12:11:09 by imimouni         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
-NAME	= megaphone
 	
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+SRC = megaphone.cpp
+OBJ = $(SRC:.cpp=.o)
+CC = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+
+NAME = megaphone
 
 all: $(NAME)
 
-$(NAME): 
-	@ c++ $(FLAGS) megaphone.cpp -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	@rm -rf $(NAME)
+	rm -f $(OBJ)
 
-re: clean all
+fclean: clean
+	rm -f $(NAME)
 
-.PHONY: all clean re
+re: fclean $(NAME)
+
+.PHONY: all clean fclean re
