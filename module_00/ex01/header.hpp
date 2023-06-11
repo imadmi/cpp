@@ -2,8 +2,8 @@
 #ifndef HEADER_HPP
 #define HEADER_HPP
 
-#include <iostream>
-#include <iomanip>
+# include <iostream>
+# include <iomanip>
 # include <string>
 
 using std::string;
@@ -11,15 +11,12 @@ using std::string;
 class	Contact
 {
 	private:
-		string	fname;
-		string	lname;
-		string	nick;
-		string	phone_num;
-		string	secret;
+		string		fname;
+		string		lname;
+		string		nick;
+		string		phone_num;
+		string		secret;
 	public:
-		// Contact(void);
-		// ~Contact(void);
-		// /* Getters and setters */
 		string		get_fname(void);
 		string		get_lname(void);
 		string		get_nick(void);
@@ -36,19 +33,15 @@ class	Contact
 class	Phonebook
 {
 	private:
-		Contact	contacts[8];
-		// Contact	contacts;
-		int		index;
+		Contact		contacts[8];
+		int			index;
 	public:
-		int		get_index(void);
+		void		add(void);
+		void		search(void);
+
+		int			get_index(void);
 		void		set_index(int index);
-		// Phonebook(void);
-		// ~Phonebook(void);
-		void	add(void);
-		void	search(void);
-		void	print(Contact contact);
-		// /* Getters */
-		Contact	get_contact(int index);
+		Contact		get_contact(int index);
 };
 
 #endif 
