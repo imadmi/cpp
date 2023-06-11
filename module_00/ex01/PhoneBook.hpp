@@ -1,6 +1,6 @@
 
-#ifndef HEADER_HPP
-#define HEADER_HPP
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 #include <iostream>
 #include <iomanip>
@@ -28,7 +28,7 @@ public:
 	void set_secret(std::string str);
 };
 
-class Phonebook
+class PhoneBook
 {
 private:
 	Contact contacts[8];

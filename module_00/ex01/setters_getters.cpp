@@ -1,6 +1,6 @@
-#include "header.hpp"
+#include "PhoneBook.hpp"
 
-Contact	Phonebook::get_contact(int index)
+Contact	PhoneBook::get_contact(int index)
 {
 	return (this->contacts[(index - 1) % 8]);
 }
@@ -30,12 +30,12 @@ std::string	Contact::get_secret(void)
 	return (this->secret);
 }
 
-int	Phonebook::get_index(void)
+int	PhoneBook::get_index(void)
 {
 	return (this->index);
 }
 
-void	Phonebook::set_index(int str)
+void	PhoneBook::set_index(int str)
 {
 	this->index = str;
 }

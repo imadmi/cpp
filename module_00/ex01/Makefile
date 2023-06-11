@@ -1,11 +1,11 @@
 
-SRC = main.cpp setters_getters.cpp add.cpp search.cpp
-OBJ = main.o setters_getters.o add.o search.o
-INC = header.hpp
-CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
 
+SRC = main.cpp setters_getters.cpp PhoneBook.cpp
+OBJ = main.o setters_getters.o PhoneBook.o
+FLAGS = -Wall -Wextra -Werror -std=c++98
+INC = PhoneBook.hpp
 NAME = PhoneBook
+CC = c++
 
 all: $(NAME)
 

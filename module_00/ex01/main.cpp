@@ -1,9 +1,9 @@
-#include "header.hpp"
+#include "PhoneBook.hpp"
 
 
 int	main(void)
 {
-	Phonebook 	PhoneBook;
+	PhoneBook 	PhoneBook;
 	std::string		str;
 
 	PhoneBook.set_index(0);
