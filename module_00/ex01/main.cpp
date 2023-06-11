@@ -4,7 +4,7 @@
 int	main(void)
 {
 	Phonebook 	PhoneBook;
-	string		str;
+	std::string		str;
 
 	PhoneBook.set_index(0);
 	while (str != "EXIT")

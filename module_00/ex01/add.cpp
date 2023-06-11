@@ -2,11 +2,11 @@
 
 void	Phonebook::add(void)
 {
-	string	fname;
-	string	lname;
-	string	nick_name;
-	string	phone_num;
-	string	dark_secret;
+	std::string	fname;
+	std::string	lname;
+	std::string	nick_name;
+	std::string	phone_num;
+	std::string	dark_secret;
 
 	if (get_index() >= 8)
 		std::cout << "\e[31mOverwriting contact '" << this->contacts[get_index() % 8].get_fname() << "'\e[0m\n";

@@ -1,20 +1,20 @@
 #include "header.hpp"
 
-string	print(string text)
+std::string	print(std::string text)
 {
-    string str = text;
+    std::string str = text;
 
     if (str.length() > 10)
         str = str.substr(0, 9) + ".";
 
-    str = string(10 - str.length(), ' ') + str;
+    str = std::string(10 - str.length(), ' ') + str;
 
     return (str);
 }
 
 void	Phonebook::search(void)
 {
-	string	str;
+	std::string	str;
 	int		i;
 	int		j = 1;
 
