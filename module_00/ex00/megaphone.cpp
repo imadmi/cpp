@@ -11,7 +11,7 @@ int	main(int	ac, char	*av[])
 				std::cout << ' ';
 			for (size_t j = 0; j < std::strlen(av[i]); j++)
 			{
-				std::cout << toupper(av[i][j]);
+				std::cout << (char)toupper(av[i][j]);
 			}
 		}
 		std::cout << '\n';
