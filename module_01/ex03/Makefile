@@ -1,10 +1,10 @@
 
 
-SRC = main.cpp
-OBJ = main.o
+SRC = HumanA.cpp HumanB.cpp main.cpp Weapon.cpp
+OBJ = HumanA.o HumanB.o main.o Weapon.o
 FLAGS = -Wall -Wextra -Werror -std=c++98
-INC = 
-NAME = BRAIN
+INC = HumanA.hpp HumanB.hpp Weapon.hpp
+NAME = Weapon
 CC = c++
 
 all: $(NAME)
@@ -12,7 +12,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(INC)
 	@ $(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	@ clear
-	@echo "\033[0;92m./BRAIN :\033[0m"
+	@echo "\033[0;92m./Weapon :\033[0m"
 
 clean:
 	@ rm -f $(OBJ)
