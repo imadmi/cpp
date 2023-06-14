@@ -21,7 +21,7 @@ int Sed::replace(char **argv, std::string str)
 	for (int i = 0; i < (int)str.size(); i++)
 	{
 		pos = str.find(argv[2], i);
-		if (pos != -1 && pos == i)
+		if (pos == i)
 		{
 			outfile << argv[3];
 			i += std::string(argv[2]).size() - 1;

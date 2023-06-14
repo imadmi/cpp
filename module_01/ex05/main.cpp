@@ -1,34 +1,26 @@
 
 #include "Harl.hpp"
 
-void Harl::complain(std::string level)
+void Harl::complain()
 {
-    void (Harl::*complaintFunc)();
+    void (Harl::*ptr_to_fct_addr[4])() = {&Harl::_debug, &Harl::_warning, &Harl::_info, &Harl::_error};
+    std::string levels[4] = {"debug", "warning", "info", "error"};
 
-    if (level == "DEBUG")
-        complaintFunc = &Harl::debug;
-    else if (level == "INFO")
-        complaintFunc = &Harl::info;
-    else if (level == "WARNING")
-        complaintFunc = &Harl::warning;
-    else if (level == "ERROR")
-        complaintFunc = &Harl::error;
-    else {
-        std::cout << "Invalid complaint level!" << std::endl;
-        return;
+    for (int i = 0; i < 4; i++)
+    {
+        if (get_level() == levels[i])
+            (this->*ptr_to_fct_addr[i])();
     }
+};   
 
-    (this->*complaintFunc)();
-}
-
-int main() {
-    // Harl harl;
-    
-    // harl.complain("DEBUG");
-    // harl.complain("INFO");
-    // harl.complain("WARNING");
-    // harl.complain("ERROR");
-    // harl.complain("INVALID");
-
-    return 0;
+int main(int ac, char **av)
+{
+    if (ac  == 2)
+    {
+        Harl harl(av[1]);
+        harl.complain();
+        return (EXIT_SUCCESS);
+    }
+    std::cout << "Error: Wrong number of arguments" << std::endl;
+    return (EXIT_FAILURE);
 }

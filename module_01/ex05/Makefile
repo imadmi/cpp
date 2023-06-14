@@ -1,9 +1,9 @@
 
 
-SRC = main.cpp harl.cpp
-OBJ = main.o harl.o
+SRC = main.cpp Harl.cpp
+OBJ = $(SRC:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
-INC = harl.hpp
+INC = *.hpp
 NAME = harl
 CC = c++
 

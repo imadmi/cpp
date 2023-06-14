@@ -11,12 +11,11 @@ std::string Error_handling(char *str)
 	infile.open(str);
 	if (infile.fail())
 	{
-		std::cout << "Error: " << str << ":" << \
-		" no such file or directory." << std::endl;
+		std::cout << "Error: " << str << ":" << " no such file or directory." << std::endl;
 		return ("");
 	}
     while (std::getline(infile, line))
-        buffer += line;
+        buffer += line + "\n";
 	infile.close();
     return (buffer);
 }
