@@ -9,7 +9,7 @@ void	PhoneBook::add(void)
 	std::string	dark_secret;
 
 	if (get_index() >= 8)
-		std::cout << "\e[31mOverwriting contact '" << this->contacts[get_index() % 8].get_fname() << "'\e[0m\n";
+		std::cout << "\e[31mOverwriting contact '" << this->contacts[get_index() % 8].get_fname() << "'\e[0m" << std::endl;
 	while (fname == "")
 	{
 		std::cout << "Enter a first name: ";
@@ -45,13 +45,11 @@ void	PhoneBook::add(void)
 		if (dark_secret != "")
 		{
 			this->contacts[get_index() % 8].set_secret(dark_secret);
-			std::cout << "\e[32mContact successfully added to PhoneBook [" << get_index() % 8 + 1 << "/8]\e[0m\n";
+			std::cout << "\e[32mContact successfully added to PhoneBook [" << get_index() % 8 + 1 << "/8]\e[0m" << std::endl;
 		}
 	}
 	set_index(get_index() + 1);
 }
-
-#include "PhoneBook.hpp"
 
 std::string	print(std::string text)
 {
@@ -79,7 +77,7 @@ void	PhoneBook::search(void)
     	std::cout << "\e[31m|\e[0m" <<"         " <<  j << "\e[31m|\e[0m" 
 		<< print(get_contact(j).get_fname()) << "\e[31m|\e[0m"
 		<< print(get_contact(j).get_lname()) << "\e[31m|\e[0m"
-		<< print(get_contact(j).get_nick()) << "\e[31m|\e[0m\n";
+		<< print(get_contact(j).get_nick()) << "\e[31m|\e[0m" << std::endl;
 		++j;
 	}
 	std::cout << "\e[31m---------------------------------------------\e[0m" << std::endl;
@@ -92,7 +90,7 @@ void	PhoneBook::search(void)
 		{
 			if (i >= 1 && i <= 8 && get_contact(i).get_fname().length() != 0)
 				break ;
-			std::cout << "Invalid index!\n";
+			std::cout << "Invalid index!" << std::endl;
 			return ;
 		}
 	}

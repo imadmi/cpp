@@ -15,6 +15,15 @@ int	main(void)
 			PhoneBook.add();
 		else if (str == "SEARCH")
 			PhoneBook.search();
+		else if (str == "EXIT")
+			std::cout << "\e[31mEXIT" <<std::endl;
+		else if (str != "EXIT" && str != "ADD" && str != "SEARCH")
+			std::cout << "\033[0;93mcommand not found\033[0m" <<std::endl;
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return (EXIT_SUCCESS);
+		}
 	}
 	return (EXIT_SUCCESS);
 }
