@@ -9,7 +9,7 @@ int	main(void)
 	PhoneBook.set_index(0);
 	while (str != "EXIT")
 	{
-		std::cout << "Enter a command > ";
+		std::cout << "Enter a command (ADD, SEARCH, EXIT) > ";
 		std::getline(std::cin, str);
 		if (str == "ADD")
 			PhoneBook.add();
