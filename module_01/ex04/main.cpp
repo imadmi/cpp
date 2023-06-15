@@ -14,19 +14,27 @@ std::string Error_handling(char *str)
 		return ("");
 	}
     while (std::getline(infile, line))
+    {
+        if (infile.eof())
+        {
+            buffer += line;
+            infile.close();
+            return (buffer);
+        }
         buffer += line + "\n";
+    }
 	infile.close();
     return (buffer);
 }
 
-int	main(int argc, char **argv)
+int	main(int argc, char **av)
 {
     if (argc == 4)
     {
-        if (!Error_handling(argv[1]).empty())
+        if (!Error_handling(av[1]).empty())
         {
             Sed sed;
-            if (sed.replace(argv, Error_handling(argv[1])) == 0)
+            if (sed.replace(av, Error_handling(av[1])) == 0)
                 return (EXIT_SUCCESS);
         }
         return (EXIT_FAILURE);
