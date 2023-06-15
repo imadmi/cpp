@@ -7,10 +7,10 @@ class	Harl
 {
 private:
 	std::string	_level;
-	void 	_debug()	{ std::cout << "DEBUG: ..." << std::endl;}
-	void 	_info()		{ std::cout << "INFO: ..." << std::endl; }
-	void 	_warning()	{ std::cout << "WARNING: ..." << std::endl;}
-	void 	_error()	{ std::cout << "ERROR: ..." << std::endl;}
+	void 	_debug()	;
+	void 	_info()		;
+	void 	_warning()	;
+	void 	_error()	;
 
 public:
 	Harl(std::string	_level);
