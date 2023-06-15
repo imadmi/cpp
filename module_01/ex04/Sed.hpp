@@ -14,8 +14,8 @@ class Sed
 		// std::ifstream ifs;
 		// std::ifstream ofs;
 	public:
-		Sed(std::string filename, std::string s1, std::string s2);
-		~Sed();
+		Sed(void);
+		~Sed(void);
 		int	replace(char **argv, std::string str);
 };
  

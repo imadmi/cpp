@@ -21,6 +21,6 @@ int main(int ac, char **av)
         harl.complain();
         return (EXIT_SUCCESS);
     }
-    std::cout << "Error: Wrong number of arguments" << std::endl;
+    std::cout << "usage : ./harl [level (warning for example)]" << std::endl;
     return (EXIT_FAILURE);
 }

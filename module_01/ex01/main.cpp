@@ -5,6 +5,7 @@
 /* Creates horde of zombies named 'name' */
 Zombie*	zombieHorde(int N, std::string name);
 
+
 int	main(void)
 {
 	int	size = 3;
