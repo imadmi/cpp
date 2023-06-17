@@ -2,7 +2,7 @@
 
 SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror #-std=c++98
 INC = Fixed.hpp
 NAME = Fixed
 CC = c++
@@ -25,5 +25,8 @@ fclean: clean
 	@echo "\033[0;93mThe object files and the executable are removed.\033[0m"
 
 re: fclean $(NAME)
+
+%.o: %.cpp
+	@$(CC) $(FLAGS)-c $< -o $@
 
 .PHONY: all clean fclean re

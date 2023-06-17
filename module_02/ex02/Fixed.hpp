@@ -31,10 +31,10 @@ class Fixed
         bool operator==(Fixed const &rhs);
         bool operator!=(Fixed const &rhs);
 
-        int toInt(void) const;
-        float toFloat(void) const;
-        int getRawBits(void) const;
-        void setRawBits(int const raw);
+        int     toInt(void) const;
+        float   toFloat(void) const;
+        int     getRawBits(void) const;
+        void    setRawBits(int const raw);
         static Fixed min(Fixed const &a, Fixed const &b);
         static Fixed max(Fixed const &a, Fixed const &b);
         static const Fixed & min(Fixed &a, Fixed &b);
