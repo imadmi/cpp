@@ -13,12 +13,12 @@ Fixed::Fixed(Fixed const &copy)
     *this = copy;
 }
 
-Fixed::Fixed(const int NBR) : _fixedPointValue( NBR << _fractionalBits )
+Fixed::Fixed(const int NBR) : _fixedPointValue(NBR << _fractionalBits)
 {
     // std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float NBR) : _fixedPointValue( roundf( NBR * ( 1 << _fractionalBits ) ) )
+Fixed::Fixed(const float NBR) : _fixedPointValue(roundf(NBR * ( 1 << _fractionalBits)))
 {
     // std::cout << "Float constructor called" << std::endl;
 }
@@ -85,24 +85,24 @@ Fixed Fixed::operator--(int)
 
 //   Arithmetic operators
 
-Fixed   Fixed::operator+( const Fixed &FIXED )
+Fixed   Fixed::operator+(const Fixed &FIXED)
 {
-    return Fixed( this->toFloat() + FIXED.toFloat() );
+    return Fixed(this->toFloat() + FIXED.toFloat());
 }
 
-Fixed   Fixed::operator-( const Fixed &FIXED )
+Fixed   Fixed::operator-(const Fixed &FIXED)
 {
-    return Fixed( this->toFloat() - FIXED.toFloat() );
+    return Fixed(this->toFloat() - FIXED.toFloat());
 }
 
-Fixed   Fixed::operator*( const Fixed &FIXED )
+Fixed   Fixed::operator*(const Fixed &FIXED)
 {
-    return Fixed( this->toFloat() * FIXED.toFloat() );
+    return Fixed(this->toFloat() * FIXED.toFloat());
 }
 
-Fixed   Fixed::operator/( const Fixed &FIXED )
+Fixed   Fixed::operator/(const Fixed &FIXED)
 {
-    return Fixed( this->toFloat() / FIXED.toFloat() );
+    return Fixed(this->toFloat() / FIXED.toFloat());
 }
 
 //   Comparison operators
