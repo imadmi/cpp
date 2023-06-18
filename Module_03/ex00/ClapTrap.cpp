@@ -85,7 +85,7 @@ void  ClapTrap::attack(const std:: string& target)
     else
     {
         std::cout<<"ClapTrap "<< _name<< " attacks " << target <<" , causing "<< _attackDamage << "  points of damage!" << std::endl;
-        _energy -=1;
+        _energy--;
     }
 }
 
@@ -108,6 +108,6 @@ void ClapTrap::beRepaired(unsigned int INT)
     {
         std::cout << "ClapTrap " << _name << " takes a recovery of " << INT << " points!" << std::endl;
         _hitPoint += INT;
-        _energy -= 1;
+        _energy--;
     }
 }
