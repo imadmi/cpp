@@ -4,7 +4,7 @@ SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 INC = ClapTrap.hpp ScavTrap.hpp
-NAME = ClapTrap
+NAME = ScavTrap
 CC = c++
 
 all: $(NAME)
@@ -12,7 +12,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(INC)
 	@ $(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	@ clear
-	@echo "\033[0;92m./ClapTrap :\033[0m"
+	@echo "\033[0;92m./ScavTrap :\033[0m"
 
 clean:
 	@ rm -f $(OBJ)

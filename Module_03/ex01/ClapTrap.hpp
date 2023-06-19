@@ -15,19 +15,19 @@ class ClapTrap
         ClapTrap(std::string name);
         ClapTrap(ClapTrap &copy);
         ~ClapTrap(void);
-        ClapTrap & operator=(ClapTrap &copy);
+        ClapTrap& operator=(ClapTrap &copy);
 
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 
-        void setAttackDamage(int attackDamage);
+        void setName(std::string name);
         void setHitPoint(int amount);
         void setEnergy(int amount);
-        void setName(std::string name);
+        void setAttackDamage(int attackDamage );
 
-        std::string getName() const;
-        int getAttackDamage() const;
-        int getHitPoint() const;
-        int getEnergy() const;
+        std::string getName();
+        int         getHitPoint();
+        int         getEnergy();
+        int         getAttackDamage();
 };
