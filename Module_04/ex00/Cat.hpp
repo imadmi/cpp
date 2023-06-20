@@ -2,9 +2,14 @@
 #pragma once
 #include "Animal.hpp"
 
-class Cat : Animal
+
+class Cat : public Animal
 {
     public:
-        void setName(std::string &type);
-        std::string getName() const;
+        Cat();
+        Cat(Cat &copy);
+        Cat & operator=(Cat &copy);
+        ~Cat();
+
+        void makeSound() const;
 };

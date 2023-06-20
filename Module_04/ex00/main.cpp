@@ -1,38 +1,48 @@
-#include <iostream>
 
-class Shape {
-public:
-    virtual void draw() {
-        std::cout << "Drawing a shape." << std::endl;
-    }
-};
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-class Circle : public Shape {
-public:
-    void draw() {
-        std::cout << "Drawing a circle." << std::endl;
-    }
-};
+int main()
+{
 
-class Square : public Shape {
-public:
-    void draw() {
-        std::cout << "Drawing a square." << std::endl;
-    }
-};
 
-int main() {
-    Shape* shape1 = new Circle();
-    Shape* shape2 = new Square();
-    Shape* shape3 = new Shape();
-    
-    shape1->draw();  // Calls draw() of Circle class
-    shape2->draw();  // Calls draw() of Square class
-    shape3->draw();  // Calls draw() of Square class
-    
-    delete shape1;
-    delete shape2;
-    delete shape3;
-    
-    return 0;
+    const Animal* meta = new Animal();
+    std::cout << std::endl;
+    const Animal* i = new Cat();
+    std::cout << std::endl;
+    const Animal* j = new Dog();
+
+    std::cout << std::endl;
+
+    std::cout << j->getType() << std::endl;
+    std::cout << i->getType() << std::endl;
+    i->makeSound();
+    j->makeSound();
+    meta->makeSound();
+    std::cout << std::endl;
+
+    const WrongAnimal* h = new WrongCat();
+    std::cout << std::endl;
+    std::cout << h->getType() << std::endl;
+    h->makeSound();
+
+    // WrongAnimal wronganimal("Al 7ayawan lghalat");
+    // wronganimal.makeSound();
+    // std::cout << std::endl;
+
+    // WrongCat wrongcat;
+    // wrongcat.setType("wrongcat");
+    // wrongcat.makeSound();
+    // std::cout << std::endl;
+
+    delete meta;
+    std::cout << std::endl;
+    delete i;
+    std::cout << std::endl;
+    delete j;
+    std::cout << std::endl;
+    delete h;
+
+    return (EXIT_SUCCESS);
 }

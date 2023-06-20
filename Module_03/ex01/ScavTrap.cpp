@@ -34,10 +34,13 @@ ScavTrap :: ScavTrap(ScavTrap & copy)
 ScavTrap&   ScavTrap::operator=(ScavTrap &copy)
 {    
     std::cout<< "copy assignement operator called" << std::endl;
-    setName(copy.getName());
-    setAttackDamage(copy.getAttackDamage());
-    setHitPoint(copy.getHitPoint());
-    setEnergy(copy.getEnergy());
+    if (this !=&copy)
+    {
+        setName(copy.getName());
+        setAttackDamage(copy.getAttackDamage());
+        setHitPoint(copy.getHitPoint());
+        setEnergy(copy.getEnergy());
+    }
     return (*this);
 }
 

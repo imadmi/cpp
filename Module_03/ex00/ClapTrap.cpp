@@ -25,10 +25,13 @@ ClapTrap :: ClapTrap(ClapTrap & copy)
 ClapTrap& ClapTrap::operator=(ClapTrap &copy)
 {    
     std::cout<< "copy assignement operator called" << std::endl;
-    this->_name = copy._name;
-    this->_attackDamage = copy._attackDamage;
-    this-> _hitPoint = copy._hitPoint;
-    this->_energy = copy._energy;
+    if (this !=&copy)
+    {
+        this->_name = copy._name;
+        this->_attackDamage = copy._attackDamage;
+        this-> _hitPoint = copy._hitPoint;
+        this->_energy = copy._energy;
+    }
     return (*this);
 }
 
