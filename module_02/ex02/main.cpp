@@ -24,6 +24,7 @@ int main( void )
     std::cout << Fixed::min( a, b ) << std::endl;
 
     std::cout << "min " << a.Fixed::min( a, b ) << std::endl;
+    std::cout << "min " << a.min( a, b ) << std::endl;
     
     return 0;
 }
