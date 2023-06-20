@@ -2,7 +2,7 @@
 
 SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
-FLAGS = -Wall -Wextra -Werror #-std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 INC = Fixed.hpp
 NAME = Fixed
 CC = c++
@@ -26,7 +26,7 @@ fclean: clean
 
 re: fclean $(NAME)
 
-%.o: %.cpp
-	@$(CC) $(FLAGS)-c $< -o $@
+%.o: %.cpp $(INC)
+	@$(CC) -c $< -o $@
 
 .PHONY: all clean fclean re

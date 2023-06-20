@@ -26,4 +26,7 @@ fclean: clean
 
 re: fclean $(NAME)
 
+%.o: %.cpp $(INC)
+	@$(CC) -c $< -o $@
+
 .PHONY: all clean fclean re

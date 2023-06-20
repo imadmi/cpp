@@ -37,6 +37,6 @@ class Fixed
         void    setRawBits(int const raw);
         static Fixed min(Fixed const &a, Fixed const &b);
         static Fixed max(Fixed const &a, Fixed const &b);
-        static const Fixed & min(Fixed &a, Fixed &b);
-        static const Fixed & max(Fixed &a, Fixed &b);
+        static Fixed & min(Fixed &a, Fixed &b);
+        static Fixed & max(Fixed &a, Fixed &b);
 };
