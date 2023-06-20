@@ -4,7 +4,7 @@ SRC = Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 INC = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
-NAME = FragTrap
+NAME = Animal
 CC = c++
 
 all: $(NAME)
@@ -12,7 +12,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(INC)
 	@ $(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	@ clear
-	@echo "\033[0;92m./FragTrap :\033[0m"
+	@echo "\033[0;92m./Animal :\033[0m"
 
 clean:
 	@ rm -f $(OBJ)
