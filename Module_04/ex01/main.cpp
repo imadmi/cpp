@@ -1,7 +1,15 @@
 
 
-int main(int argc, char const *argv[])
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+
+
+int main()
 {
-    /* code */
-    return 0;
+    const Animal* j = new Dog();
+    // const Animal* i = new Cat();
+    delete j;
+    // delete i;
+    return (EXIT_SUCCESS);
 }
