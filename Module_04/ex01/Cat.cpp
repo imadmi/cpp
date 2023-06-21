@@ -16,8 +16,8 @@ Cat::Cat(Cat& copy)
 
 Cat::~Cat()
 {
-    delete this->brain;
     std::cout << "Cat default destructor called" << std::endl;
+    delete this->brain;
 }
 
 Cat& Cat::operator=(Cat& copy)

@@ -15,7 +15,7 @@ Brain::Brain(Brain &copy)
 
 Brain::~Brain()
 {
-    std::cout << "Brain default destructor called" << std::endl;
+    std::cout << YELLOW << "Brain default destructor called" << DEF << std::endl;
 }
 
 Brain& Brain::operator=(Brain &copy)
