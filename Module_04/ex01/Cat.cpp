@@ -26,7 +26,7 @@ Cat& Cat::operator=(Cat& copy)
     {
         this->type = copy.type;
         this->brain = new Brain();
-        *(this->brain) = *(copy.brain); //
+        *(this->brain) = *(copy.brain);
     }
     return (*this);
 }
