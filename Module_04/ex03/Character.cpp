@@ -4,43 +4,42 @@
 
 Character::Character()
 {
-   std::cout << "Character default constructor called" << std::endl;
+//    std::cout << "Character default constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
-        this->materias[i] = NULL;
+        materias[i] = 0;
     }
 }
 
-Character::Character(std::string name)
+Character::Character(std::string name) : _name(name)
 {
-    std::cout << "Character constructor called" << std::endl;
-    this->_name = name;
+    // std::cout << "Character constructor called" << std::endl;
     for(int i = 0; i < 4; i++)
     {
-        this->materias[i] = NULL;
+        materias[i] = 0;
     }
 }
 
 Character::Character(Character &copy)
 {
-    std::cout << "Character copy constructor called" << std::endl;
+    // std::cout << "Character copy constructor called" << std::endl;
     *this = copy;
 }
 
-Character & Character::operator=(Character &copy)
+Character &Character::operator=(Character &copy)
 {
-    std::cout << "Character copy assainement operator called" << std::endl;
+    // std::cout << "Character copy assainement operator called" << std::endl;
     if (this != &copy)
     {
-        this->_name = copy.getName();
-        for (int i = 0; i < 4; i++)
+        _name = copy.getName();
+        for (int i = 0; i < 4; i++) // Deep copy
         {
-            if (this->materias[i])
+            if (materias[i])
             {
-                delete this->materias[i];
-                this->materias[i] = NULL;
+                delete materias[i];
+                materias[i] = 0;
             }
-            this->materias[i] = copy.materias[i];
+            materias[i] = copy.materias[i];
         }
     }
     return (*this);
@@ -48,42 +47,40 @@ Character & Character::operator=(Character &copy)
 
 Character::~Character()
 {
-    std::cout << "Character disconstructor called" << std::endl;
+    // std::cout << "Character disconstructor called" << std::endl;
     for(int i = 0; i < 4; i++)
     {
-        if (this->materias[i])
-            delete this->materias[i];
+        if (materias[i])
+            delete materias[i];
     }
 }
 
-std::string const & Character::getName() const
+std::string const &Character::getName() const
 {
-    return this->_name;
+    return (_name);
 }
 
 void Character::equip(AMateria* EQUIP)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (!this->materias[i])
+        if (materias[i] == 0)
         {
-            this->materias[i] = EQUIP;
-            return;
+            materias[i] = EQUIP;
+            return ;
         }
     }
 }
 
 void Character::unequip(int INT)
 {
-    if (this->materias[INT])
-    {
-        this->materias[INT] = NULL;
-    }
+    if (materias[INT] != 0 && INT < 4)
+        materias[INT] = 0;
 }
 
 void Character::use(int INT, ICharacter& target)
 {
-    if (this->materias[INT])
-        this->materias[INT]->use(target);
+    if (materias[INT] != 0 && INT < 4)
+        materias[INT]->use(target);
 }
 

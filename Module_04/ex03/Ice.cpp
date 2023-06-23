@@ -4,23 +4,24 @@
 
 Ice::Ice()
 {
-    std::cout << "Ice default constructor called" << std::endl;
+    // std::cout << "Ice default constructor called" << std::endl;
     this->type = "ice";
 }
 
 Ice::~Ice()
 {
-    std::cout << "Ice distructor called" << std::endl;
+    // std::cout << "Ice distructor called" << std::endl;
 }
 
 Ice::Ice(Ice &copy)
 {
-    std::cout << "Ice copy constructor called" << std::endl;
+    // std::cout << "Ice copy constructor called" << std::endl;
     *this = copy; 
 }
 
 Ice &Ice::operator=(Ice &copy)
 {
+    // std::cout << "Ice copy assainement operator called" << std::endl;
     if (this != &copy)
         this->type = copy.type;
     return (*this);
@@ -29,7 +30,7 @@ Ice &Ice::operator=(Ice &copy)
 AMateria *Ice::clone() const
 {
     AMateria *ICE = new Ice();
-    return ICE;
+    return (ICE); // return a new instance of the same type
 }
 
 void Ice::use(ICharacter& target)

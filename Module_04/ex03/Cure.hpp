@@ -9,6 +9,7 @@ class Cure:public AMateria
         Cure(Cure &copy);
         Cure & operator=(Cure &copy);
         virtual ~Cure();
+
         virtual AMateria* clone() const;
         virtual void use(ICharacter& target);
 };
