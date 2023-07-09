@@ -13,7 +13,7 @@ class Animal
         Animal( std::string type );
         Animal(Animal &copy);
         Animal & operator=(Animal &copy);
-        virtual ~Animal();
+        virtual ~Animal(); // virtual means we can override it in the driven classes 
 
         void            setType(std::string type);
         std::string     getType() const;

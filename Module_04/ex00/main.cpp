@@ -27,20 +27,20 @@ int main()
     std::cout << h->getType() << std::endl;
     h->makeSound();
 
-    // WrongAnimal wronganimal("Al 7ayawan lghalat");
-    // wronganimal.makeSound();
-    // std::cout << std::endl;
+    WrongAnimal wronganimal("Al 7ayawan lghalat");
+    wronganimal.makeSound();
+    std::cout << std::endl;
 
-    // WrongCat wrongcat;
-    // wrongcat.setType("wrongcat");
-    // wrongcat.makeSound();
-    // std::cout << std::endl;
+    WrongCat wrongcat;
+    wrongcat.setType("wrongcat");
+    wrongcat.makeSound();
+    std::cout << std::endl;
 
     delete meta;
     std::cout << std::endl;
-    delete i;
-    std::cout << std::endl;
     delete j;
+    std::cout << std::endl;
+    delete i;
     std::cout << std::endl;
     delete h;
 
