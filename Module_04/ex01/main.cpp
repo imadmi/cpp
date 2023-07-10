@@ -38,10 +38,12 @@ int main()
 		delete animal_array[i];
 	std::cout << std::endl;
 
-// copy assainement operator test
+	// copy assainement operator test
+	
 	Dog test;
 		Dog tmp = test;
 
 	std::cout << std::endl;
+
     return (EXIT_SUCCESS);
 }

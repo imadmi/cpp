@@ -6,7 +6,7 @@ Animal::Animal()
     std::cout << "Animal default constructor called" << std::endl;   
 }
 
-Animal::Animal( std::string TYPE ) : type( TYPE )
+Animal::Animal(std::string TYPE) : type(TYPE)
 {
     std::cout << "Animal " << this->type << " constructor called" << std::endl;
 }
