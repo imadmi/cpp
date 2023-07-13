@@ -2,7 +2,7 @@
 #pragma once
 #include "IMateriaSource.hpp"
 
-class MateriaSource:public IMateriaSource
+class MateriaSource : public IMateriaSource
 {
     private:
         std::string _type;

@@ -13,8 +13,9 @@ int main()
 	// delete cat;
 
     int count = 2;	
-	const Animal *(animal_array[count]);
+	Animal *(animal_array[count]);
 	std::cout << std::endl;
+
 	for (int i = 0; i < count / 2; i++)
 	{
         std::cout << RED <<i + 1 << DEF << " ";
@@ -38,10 +39,10 @@ int main()
 		delete animal_array[i];
 	std::cout << std::endl;
 
-// copy assainement operator test
-	Dog test;
-		Dog tmp = test;
+	// // copy assainement operator test
+	// Dog test;
+	// Dog tmp = test;
+	// std::cout << std::endl;
 
-	std::cout << std::endl;
     return (EXIT_SUCCESS);
 }

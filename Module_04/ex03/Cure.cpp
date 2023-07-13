@@ -5,7 +5,7 @@
 Cure::Cure()
 {
     // std::cout << "Cure default constructor called" << std::endl;
-    this->type = "cure";
+    type = "cure";
 }
 
 Cure::~Cure()
@@ -32,7 +32,7 @@ AMateria *Cure::clone() const
     return (CLONE); // return a new instance of the same type
 }
 
-void Cure::use(ICharacter& target)
+void Cure::use(ICharacter& CURE)
 {
-    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+    std::cout << "* heals " << CURE.getName() << "'s wounds *" << std::endl;
 }

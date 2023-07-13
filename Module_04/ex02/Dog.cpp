@@ -17,7 +17,7 @@ Dog::Dog(Dog &copy)
 Dog::~Dog()
 {
     std::cout << "Dog default destructor called" << std::endl;
-    delete this->brain;
+    delete brain;
 }
 
 Dog& Dog::operator=(Dog &copy)

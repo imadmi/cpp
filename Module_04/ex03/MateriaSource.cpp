@@ -61,7 +61,7 @@ AMateria* MateriaSource::createMateria(std::string const &type)
         if (_materias[i] && _materias[i]->getType() == type)
             return _materias[i]->clone();
     }
-    return (NULL);
+    return (0);
 }
 
 void MateriaSource::learnMateria(AMateria* materia)

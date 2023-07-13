@@ -13,8 +13,8 @@ class Animal
     public:
         Animal();
         Animal(Animal &copy);
-        virtual ~Animal();
         Animal & operator=(Animal &copy);
+        virtual ~Animal();
 
         void setType(std::string);
         std::string getType() const;
