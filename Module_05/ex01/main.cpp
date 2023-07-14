@@ -7,6 +7,15 @@ std::ostream& operator<<(std::ostream& OSTREAM, Bureaucrat& BUREACRAT)
     return (OSTREAM);
 }
 
+std::ostream & operator<<(std::ostream &OSTREAM,Form &FORM)
+{
+    OSTREAM << " the Form : " << FORM.getName() << std::endl;
+    OSTREAM << "signed grade " << FORM.getGradeToSign() << std::endl;
+    OSTREAM << "executed grade " << FORM.getGradeToExecute() << std::endl;
+    OSTREAM << "signe " << FORM.getSigned() << std::endl;
+    return (OSTREAM);
+}
+
 int main()
 {
     try {
