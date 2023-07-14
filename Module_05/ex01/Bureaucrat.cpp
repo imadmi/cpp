@@ -57,15 +57,19 @@ Bureaucrat::Bureaucrat(Bureaucrat &copy) : _name(copy._name)
     }
 }
 
-// void    Bureaucrat::signForm(Form& form)
-// {
-//     try
-//     {
-//         form.beSigned( *this );
-//         std::cout << *this << " signed " << form.getName() << std::endl;
-//     }
-//     catch (Form::GradeTooLowException &e)
-//     {
-//         std::cout << _name << " coulnd't sign " << form.getName() << " because " << e.what() << std::endl;
-//     }
-// }
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        if (form.getSigned() == true)
+        {
+            std::cout<< *this << "signed"<< form<<std::endl;
+        }
+        else if (form.getGradeToSign() > this->getGrade())
+            throw GradeTooLowException();
+    }
+    catch(const std::exception &e)
+    {
+        std::cout << *this << " couldn’t sign" << form << e.what() << std::endl;
+    }
+}

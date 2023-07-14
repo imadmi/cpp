@@ -19,7 +19,7 @@ class Form
         Form(const Form &copy);
         ~Form();
 
-        Form&   operator=( const Form& rhs );
+        Form&   operator=(const Form& copy);
 
         std::string getName() const;
         bool        getSigned() const;
@@ -45,3 +45,5 @@ class Form
                 }
         };
 };
+
+std::ostream & operator<<(std::ostream &OSTREAM,Form &FORM);

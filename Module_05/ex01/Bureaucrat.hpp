@@ -45,3 +45,5 @@ class Bureaucrat
         };
 
 };
+
+std::ostream& operator<<(std::ostream& OSTREAM, Bureaucrat& BUREACRAT);
