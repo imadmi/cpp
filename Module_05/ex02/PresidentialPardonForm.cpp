@@ -3,25 +3,21 @@
 #include "PresidentialPardonForm.hpp"
 
 
-PresidentialPardonForm::PresidentialPardonForm():AForm("PresidentialPardonForm", 25, 5) , _target("Null")
-{ 
-}
+PresidentialPardonForm::PresidentialPardonForm():AForm("PresidentialPardonForm", 25, 5) , _target("NULL")
+{}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target):AForm("PresidentialPardonForm", 25, 5), _target(target)
-{
-}
+{}
 
 PresidentialPardonForm::~PresidentialPardonForm()
-{
-}
+{}
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &copy):AForm(copy), _target(copy._target)
-{
-}
+{}
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm &copy)
 {
-    (void)copy;
+    // (void)copy;
     return (*this);
 }
 
