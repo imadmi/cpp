@@ -14,9 +14,7 @@ int main()
         Bureaucrat bureaucrat2("imad", 1);
 
         ShrubberyCreationForm form("garden");
-
-        RobotomyRequestForm form1 ("Hey");
-
+        RobotomyRequestForm form1("Hey");
         PresidentialPardonForm form2("Hi");
 
         form.beSigned(bureaucrat);
