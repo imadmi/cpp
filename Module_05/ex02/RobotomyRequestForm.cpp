@@ -12,12 +12,12 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target):AForm("RobotomyRequ
 RobotomyRequestForm::~RobotomyRequestForm()
 {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &copy):AForm(copy), _target(copy._target)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &copy):AForm(copy), _target(copy._target)
 {}
 
-RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm &copy)
+RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const &copy)
 {
-    // (void)copy;
+    (void)copy;
     return (*this);
 }
 
@@ -32,11 +32,9 @@ void    RobotomyRequestForm::execute(const Bureaucrat& executor) const
         throw GradeTooLowException();
     else
     {
-        int  i = rand();
-        if (i % 2 == 0)
+        if (time(0) % 2 == 0)
             std::cout << "BZZZZZT! " << _target << " has been robotomized!" << std::endl;
         else
             std::cout << "Robotomy failed! " << std::endl;
-        i++;
     }
 }

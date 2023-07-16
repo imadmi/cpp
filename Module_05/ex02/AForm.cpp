@@ -2,7 +2,7 @@
 
 #include "AForm.hpp"
 
-AForm::AForm():_name("null"), _signed(false),  _gradeToSign(1), _gradeToExecute(1)
+AForm::AForm():_name("NULL"), _signed(false),  _gradeToSign(1), _gradeToExecute(1)
 {}
 
 AForm::~AForm()
@@ -16,8 +16,8 @@ AForm::AForm(std::string name, int gradeToExecute, int gradeToSign) : _name(name
         throw GradeTooLowException();
 }
 
-AForm & AForm::operator=(AForm const  &copy)
-   {
+AForm &AForm::operator=(AForm const  &copy)
+{
     if (this != &copy)
     {
         this->_signed = copy._signed;

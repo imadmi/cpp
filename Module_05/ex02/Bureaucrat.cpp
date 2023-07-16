@@ -13,7 +13,7 @@ Bureaucrat::Bureaucrat(std::string name,  int grade) : _name(name) ,_grade(grade
         throw GradeTooLowException();
 }
 
-Bureaucrat & Bureaucrat::operator=(Bureaucrat &copy)
+Bureaucrat & Bureaucrat::operator=(Bureaucrat const &copy)
 {
     if (this != &copy)
     {
@@ -22,7 +22,7 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat &copy)
     return (*this);
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &copy) : _name(copy._name)
+Bureaucrat::Bureaucrat(Bureaucrat const &copy) : _name(copy._name)
 {
     if (this != &copy)
     {
@@ -60,7 +60,7 @@ void Bureaucrat::incrementGrade()
 void Bureaucrat::signForm(AForm &form)
 {
     // try
-    // {    
+    // {
     if (form.getSigne() == true)
     {
         std::cout << *this << "signed " << form << std::endl;

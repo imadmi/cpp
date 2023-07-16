@@ -16,6 +16,7 @@ $(NAME): $(OBJ) $(INC)
 
 clean:
 	@ rm -f $(OBJ)
+	@ rm *_shrubbery
 	@ clear
 	@echo "\033[0;93mObject files removed.\033[0m"
 
