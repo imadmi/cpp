@@ -12,12 +12,11 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target):AForm("RobotomyRequ
 RobotomyRequestForm::~RobotomyRequestForm()
 {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &copy):AForm(copy), _target(copy._target)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy):AForm(copy), _target(copy._target)
 {}
 
-RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const &copy)
+RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
 {
-    (void)copy;
     return (*this);
 }
 

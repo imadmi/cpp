@@ -16,8 +16,8 @@ class AForm
     public:
         AForm();
         AForm(std::string name, int gradeToExecute, int gradeToSign);
-        AForm &operator=(AForm const &copy);
-        AForm(AForm const &copy);
+        AForm &operator=(const AForm &copy);
+        AForm(const AForm &copy);
         virtual ~AForm();
 
         std::string  getName() const;
