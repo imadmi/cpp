@@ -16,7 +16,7 @@ AForm::AForm(std::string name, int gradeToExecute, int gradeToSign) : _name(name
         throw GradeTooLowException();
 }
 
-AForm &AForm::operator=(AForm const  &copy)
+AForm &AForm::operator=(const AForm &copy)
 {
     if (this != &copy)
     {
@@ -25,7 +25,7 @@ AForm &AForm::operator=(AForm const  &copy)
     return (*this);
 }
 
-AForm::AForm(AForm const &copy): _name(copy._name), _gradeToSign(copy._gradeToSign), _gradeToExecute(copy._gradeToExecute)
+AForm::AForm(const AForm &copy): _name(copy._name), _gradeToSign(copy._gradeToSign), _gradeToExecute(copy._gradeToExecute)
 {
     *this = copy;
 }

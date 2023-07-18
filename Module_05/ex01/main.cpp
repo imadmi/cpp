@@ -9,7 +9,7 @@ std::ostream& operator<<(std::ostream& OSTREAM, Bureaucrat& BUREACRAT)
 
 std::ostream & operator<<(std::ostream &OSTREAM,Form &FORM)
 {
-    OSTREAM << " the Form : " << FORM.getName() << std::endl;
+    OSTREAM << "The Form : " << FORM.getName() << std::endl;
     OSTREAM << "Signed grade " << FORM.getGradeToSign() << std::endl;
     OSTREAM << "Executed grade " << FORM.getGradeToExecute() << std::endl;
     OSTREAM << "Signe " << FORM.getSigned() << std::endl;
@@ -20,14 +20,13 @@ int main()
 {
     try
     {
-        Bureaucrat bureaucrat("John Doe", 10);
-        Form form("Form A", 90);
+        Bureaucrat bureaucrat("Imad", 10);
+        Form form("Form 1", 90);
         std::cout << form << std::endl;
         std::cout << std::endl;
         std::cout << bureaucrat << std::endl;
         std::cout << std::endl;
         form.beSigned(bureaucrat);
-        std::cout << std::endl;
         bureaucrat.signForm(form);
     }
     catch (const std::exception& e)

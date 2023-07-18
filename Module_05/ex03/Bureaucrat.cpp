@@ -59,19 +59,10 @@ void Bureaucrat::incrementGrade()
 
 void Bureaucrat::signForm(AForm &form)
 {
-    // try
-    // {
     if (form.getSigne() == true)
-    {
-        std::cout << *this << "signed " << form << std::endl;
-    }
-    else if (form.getgradeToSign() > this->getGrade())
-        throw GradeTooLowException();
-    // }
-    // catch(const std::exception &exception)
-    // {
-    //     std::cout << *this << "couldn’t sign " << form << exception.what() << std::endl;
-    // }
+        std::cout<< *this << " signed "<< form.getName() << std::endl;
+    else if (form.getgradeToSign() > getGrade())
+        std::cout << *this << " couldn’t sign " << form << ": Grade too low exception" << std::endl;
 }
 
 void Bureaucrat::executeForm(AForm const & form)

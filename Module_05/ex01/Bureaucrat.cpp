@@ -49,7 +49,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& BUREACRAT)
     return (*this);
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &copy) : _name(copy._name)
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name)
 {
     if (this != &copy)
     {
@@ -59,17 +59,8 @@ Bureaucrat::Bureaucrat(Bureaucrat &copy) : _name(copy._name)
 
 void Bureaucrat::signForm(Form &form)
 {
-    try
-    {
-        if (form.getSigned() == true)
-        {
-            std::cout<< *this << "signed"<< form<<std::endl;
-        }
-        else if (form.getGradeToSign() > this->getGrade())
-            throw GradeTooLowException();
-    }
-    catch(const std::exception &e)
-    {
-        std::cout << *this << " couldn’t sign" << form << e.what() << std::endl;
-    }
+    if (form.getSigned() == true)
+        std::cout<< *this << " signed "<< form.getName() << std::endl;
+    else if (form.getGradeToSign() > getGrade())
+        std::cout << *this << " couldn’t sign " << form << ": Grade too low exception" << std::endl;
 }

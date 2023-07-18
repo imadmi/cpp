@@ -13,7 +13,7 @@ int main()
         Bureaucrat bureaucrat1("imad", 40);
         Bureaucrat bureaucrat2("imad", 1);
 
-        ShrubberyCreationForm form("garden");
+        ShrubberyCreationForm form("hello");
         RobotomyRequestForm form1("Hey");
         PresidentialPardonForm form2("Hi");
 

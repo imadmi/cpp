@@ -10,7 +10,7 @@ std::ostream& operator<<(std::ostream& OSTREAM, Bureaucrat& BUREACRAT)
 int main()
 {
     try {
-        Bureaucrat bureaucrat("John Doe", 150);
+        Bureaucrat bureaucrat("Imad Mimouni", 150);
         std::cout << bureaucrat << std::endl;
 
         std::cout << "Created bureaucrat: " << bureaucrat.getName() << ", Grade: " << bureaucrat.getGrade() << std::endl;

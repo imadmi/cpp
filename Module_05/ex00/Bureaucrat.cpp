@@ -49,7 +49,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& BUREACRAT)
     return (*this);
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &copy) : _name(copy._name)
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name)
 {
     if (this != &copy)
     {

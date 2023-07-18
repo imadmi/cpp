@@ -12,20 +12,19 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Pres
 PresidentialPardonForm::~PresidentialPardonForm()
 {}
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &copy):AForm(copy), _target(copy._target)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy):AForm(copy), _target(copy._target)
 {}
 
-PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const &copy)
+PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm &copy)
 {
-    (void)copy;
     return (*this);
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-    if (executor.getGrade() > this->getgradeToExecute())
+    if (executor.getGrade() > getgradeToExecute())
         throw GradeTooLowException();
-    else if (this->getSigne() == false)
+    else if (getSigne() == false)
         throw NotSignedException();
     else
     {
@@ -35,5 +34,5 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 
 std::string PresidentialPardonForm::getTarget() const 
 {
-    return (this->_target);
+    return (_target);
 }
