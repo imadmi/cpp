@@ -12,7 +12,6 @@ int main()
     Data *data = Serializer.deserialize(ptr);
     std::cout << data->a << std::endl;
     std::cout << data->b << std::endl;
-    uintptr_t ptr1 = Serializer.serialize(data);
 
     delete data1;
     return (EXIT_SUCCESS);
