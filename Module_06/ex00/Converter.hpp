@@ -22,6 +22,7 @@ class ScalarConverter
 		static void fromFloat(double _double, const std::string _input, int _type);
 		static void fromDouble(double _double, const std::string _input, int _type);
 		static void fromNan(double _double, const std::string _input, int _type);
+
 	public:
 		static void convert(double _double, const std::string _input);
 
