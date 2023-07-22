@@ -1,10 +1,10 @@
 
 
 
-SRC = Converter.cpp main.cpp
+SRC = ScalarConverter.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
-INC = Converter.hpp
+INC = ScalarConverter.hpp
 NAME = Convert
 CC = c++
 

@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <limits>
+#include <cmath>
 
 #define CHAR 1
 #define INT 2

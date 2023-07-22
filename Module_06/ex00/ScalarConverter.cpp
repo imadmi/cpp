@@ -1,6 +1,6 @@
 
 
-#include "Converter.hpp"
+#include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter()
 {
@@ -62,24 +62,28 @@ void ScalarConverter::fromChar(double _doublee, const std::string _input, int _t
 	int _int = static_cast<int>(_char);
 	float _float = static_cast<float>(_char);
 	double _double = static_cast<double>(_char);
-    
+
 	if (isprint(_char))
         std::cout << "char: '" << _char << "'" << std::endl;
     else if (_type == NANN)
         std::cout << "char: '" << "impossible" << "'" << std::endl;
     else
         std::cout << "char: not printable" << std::endl;
-    if (_type != NANN)
+    if ((_type != NANN )&& !(_double < std::numeric_limits<int>::min() || _double > std::numeric_limits<int>::max()))
         std::cout << "int: '" << _int << "'" << std::endl;
     else
         std::cout << "int: '" << "impossible" << "'" << std::endl;
     std::cout << "float: '" << _float;
-    if (_float - _int == 0)
+    if ((_double < std::numeric_limits<float>::min() || _double > std::numeric_limits<float>::max()))
+        std::cout << "impossible" << "'" << std::endl;
+    else if (_float - round(_float) == 0)
         std::cout << ".0f'" << std::endl;
     else
         std::cout << "f'" << std::endl;
     std::cout << "double: '" << _double;
-    if (_double - _int == 0)
+    if ((_double < std::numeric_limits<double>::min() || _double > std::numeric_limits<double>::max()))
+        std::cout << "impossible" << "'" << std::endl;
+    if (_double - round(_double) == 0)
         std::cout << ".0'" << std::endl;
     else
         std::cout << "'" <<std::endl;
@@ -91,23 +95,22 @@ void ScalarConverter::fromInt(double _double, const std::string   _input, int _t
 	char _char = static_cast<char>(_double);
 	float _float = static_cast<float>(_double);
 
-    if (isprint(_char))
-        std::cout << "char: '" << _char << "'" << std::endl;
-    else if (_type == NANN)
-        std::cout << "char: '" << "impossible" << "'" << std::endl;
-    else
-        std::cout << "char: not printable" << std::endl;
-    if (_type != NANN)
+    std::cout << "char: '" << "impossible" << "'" << std::endl;
+    if ((_type != NANN ) && !(_double < std::numeric_limits<int>::min() || _double > std::numeric_limits<int>::max()))
         std::cout << "int: '" << _int << "'" << std::endl;
     else
         std::cout << "int: '" << "impossible" << "'" << std::endl;
     std::cout << "float: '" << _float;
-    if (_float - _int == 0)
+    if ((_double < std::numeric_limits<float>::min() || _double > std::numeric_limits<float>::max()))
+        std::cout << "impossible" << "'" << std::endl;
+    else if (_float - roundf(_float) == 0)
         std::cout << ".0f'" << std::endl;
     else
         std::cout << "f'" << std::endl;
     std::cout << "double: '" << _double;
-    if (_double - _int == 0)
+    if ((_double < std::numeric_limits<double>::min() || _double > std::numeric_limits<double>::max()))
+        std::cout << "impossible" << "'" << std::endl;
+    if (_double - roundf(_double) == 0)
         std::cout << ".0'" << std::endl;
     else
         std::cout << "'" <<std::endl;
@@ -119,23 +122,22 @@ void ScalarConverter::fromFloat(double _double, const std::string   _input, int 
 	char _char = static_cast<char>(_double);
 	int _int = static_cast<int>(_double);
 
-    if (isprint(_char))
-        std::cout << "char: '" << _char << "'" << std::endl;
-    else if (_type == NANN)
-        std::cout << "char: '" << "impossible" << "'" << std::endl;
-    else
-        std::cout << "char: not printable" << std::endl;
-    if (_type != NANN)
+    std::cout << "char: '" << "impossible" << "'" << std::endl;
+    if ((_type != NANN )&& !(_double < std::numeric_limits<int>::min() || _double > std::numeric_limits<int>::max()))
         std::cout << "int: '" << _int << "'" << std::endl;
     else
         std::cout << "int: '" << "impossible" << "'" << std::endl;
     std::cout << "float: '" << _float;
-    if (_float - _int == 0)
+    if ((_double < std::numeric_limits<float>::min() || _double > std::numeric_limits<float>::max()))
+        std::cout << "impossible" << "'" << std::endl;
+    else if (_float - roundf(_float) == 0)
         std::cout << ".0f'" << std::endl;
     else
         std::cout << "f'" << std::endl;
     std::cout << "double: '" << _double;
-    if (_double - _int == 0)
+    if ((_double < std::numeric_limits<double>::min() || _double > std::numeric_limits<double>::max()))
+        std::cout << "impossible" << "'" << std::endl;
+    if (_double - roundf(_double) == 0)
         std::cout << ".0'" << std::endl;
     else
         std::cout << "'" <<std::endl;
@@ -147,23 +149,22 @@ void ScalarConverter::fromDouble(double _double, const std::string _input, int _
 	int _int = static_cast<int>(_double);
 	float _float = static_cast<float>(_double);
 
-    if (isprint(_char))
-        std::cout << "char: '" << _char << "'" << std::endl;
-    else if (_type == NANN)
-        std::cout << "char: '" << "impossible" << "'" << std::endl;
-    else
-        std::cout << "char: not printable" << std::endl;
-    if (_type != NANN)
+    std::cout << "char: '" << "impossible" << "'" << std::endl;
+    if ((_type != NANN )&& !(_double < std::numeric_limits<int>::min() || _double > std::numeric_limits<int>::max()))
         std::cout << "int: '" << _int << "'" << std::endl;
     else
         std::cout << "int: '" << "impossible" << "'" << std::endl;
     std::cout << "float: '" << _float;
-    if (_float - _int == 0)
+    if ((_double < std::numeric_limits<float>::min() || _double > std::numeric_limits<float>::max()))
+        std::cout << "impossible" << "'" << std::endl;
+    else if (_float - roundf(_float) == 0)
         std::cout << ".0f'" << std::endl;
     else
         std::cout << "f'" << std::endl;
     std::cout << "double: '" << _double;
-    if (_double - _int == 0)
+    if ((_double < std::numeric_limits<double>::min() || _double > std::numeric_limits<double>::max()))
+        std::cout << "impossible" << "'" << std::endl;
+    if (_double - roundf(_double) == 0)
         std::cout << ".0'" << std::endl;
     else
         std::cout << "'" <<std::endl;
@@ -180,21 +181,24 @@ void ScalarConverter::fromNan(double _double, const std::string   _input, int _t
     else if (_type == NANN)
         std::cout << "char: '" << "impossible" << "'" << std::endl;
     else
-        std::cout << "char: not printable" << std::endl;
-    if (_type != NANN)
+    if ((_type != NANN )&& (_double < std::numeric_limits<int>::min() || _double > std::numeric_limits<int>::max()))
         std::cout << "int: '" << _int << "'" << std::endl;
     else
         std::cout << "int: '" << "impossible" << "'" << std::endl;
     std::cout << "float: '" << _float;
-    if (_float - _int == 0)
+    if ((_double < std::numeric_limits<float>::min() || _double > std::numeric_limits<float>::max()))
+        std::cout << "impossible" << "'" << std::endl;
+    else if (_float - roundf(_float) == 0)
         std::cout << ".0f'" << std::endl;
     else
         std::cout << "f'" << std::endl;
     std::cout << "double: '" << _double;
-    if (_double - _int == 0)
+    if ((_double < std::numeric_limits<double>::min() || _double > std::numeric_limits<double>::max()))
+        std::cout << "impossible" << "'" << std::endl;
+    if (_double - roundf(_double) == 0)
         std::cout << ".0'" << std::endl;
     else
-        std::cout << "'" <<std::endl;	
+        std::cout << "'" <<std::endl;
 }
 
 void	ScalarConverter::convert(double _double, const std::string _input)
