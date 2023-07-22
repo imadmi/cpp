@@ -14,30 +14,16 @@
 class ScalarConverter
 {
 	private:
-		int                 _type;
-		const std::string   _input;
-		char                _char;
-		int                 _int;
-		double              _double;
-		float               _float;
-
-	public:
 		ScalarConverter();
-		ScalarConverter(const std::string input);
-		ScalarConverter(const ScalarConverter &copy);
-		ScalarConverter &operator=(const ScalarConverter &copy);
-		~ScalarConverter();
-
-		int checkInput();
-		void convert();
-
-		void fromChar();
-		void fromInt();
-		void fromFloat();
-		void fromDouble();
-		void fromNan();
-
-		void printOutput(void)const;
+		ScalarConverter(const std::string _input);
+		static int checkInput(const std::string   _input);
+		static void fromChar(double _double, const std::string _input, int _type);
+		static void fromInt(double _double, const std::string _input, int _type);
+		static void fromFloat(double _double, const std::string _input, int _type);
+		static void fromDouble(double _double, const std::string _input, int _type);
+		static void fromNan(double _double, const std::string _input, int _type);
+	public:
+		static void convert(double _double, const std::string _input);
 
 	class ErrorException : public std::exception
 	{
