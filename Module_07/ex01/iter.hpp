@@ -2,7 +2,7 @@
 #pragma once
 #include<iostream>
 
-template < typename T >
+template <typename T>
 void    iter(T *arr, int size, void (ft_print)(T j))
 {
     for (int i = 0; i < size; i++)
