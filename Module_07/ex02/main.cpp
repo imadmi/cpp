@@ -1,6 +1,13 @@
 
 #include "Array.hpp"
 
+class a
+{
+    private :
+        int x;
+        std::string y;
+};
+
 int main()
 {
     try
@@ -24,9 +31,9 @@ int main()
         // //out-of-range index
         // std::cout << "this must throw an exception " << arr3[10] << std::endl;
     }
-    catch (std::exception& e)
+    catch (std::exception& exception)
     {
-        std::cerr << e.what() << std::endl;
+        std::cerr << exception.what() << std::endl;
     }
 
     return (EXIT_SUCCESS);

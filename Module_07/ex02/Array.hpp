@@ -12,7 +12,7 @@ class Array
 		unsigned int	_size;
 
 	public:
-		Array() : _data(new T(0)), _size(0) {};
+		Array() : _data(new T()), _size(0) {};
 		Array(unsigned int n): _data(new T[n]), _size(n) {};
 		Array(const Array &copy) {*this = copy;};
 		~Array() {delete []_data;};
@@ -47,4 +47,4 @@ class Array
 		};
 };
 
-#include "Array.tpp"
+// #include "Array.tpp"
