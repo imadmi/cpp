@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-template <typename T>
+template <class T>
 class Array
 {
 	private:
@@ -15,7 +15,7 @@ class Array
 		Array() : _data(new T(0)), _size(0) {};
 		Array(unsigned int n): _data(new T[n]), _size(n) {};
 		Array(const Array &copy) {*this = copy;};
-		~Array() {delete _data;};
+		~Array() {delete []_data;};
 
 		Array &operator=(const Array & copy)
 		{

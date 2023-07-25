@@ -3,6 +3,11 @@
 
 int main( void )
 {
+	int *A = new int(3);
+	int *B = new int (24);
+	::swap( A, B );
+	std::cout << "a = " << *A << ", b = " << *B << std::endl;
+
 	int a = 2;
 	int b = 3;
 	::swap( a, b );
