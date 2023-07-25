@@ -31,7 +31,7 @@ class Array
 
 		T &operator[] (unsigned int n)
 		{
-			if (n > _size)
+			if (n > _size || _size < 0)
 				throw Array::out_of_range();
 			return (_data[n]);
 		};
