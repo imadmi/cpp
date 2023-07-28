@@ -20,7 +20,7 @@ class Span
 		Span & operator=(const Span & copy);
 
 		void	addNumber(int Numbre);
-		// void	addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
+		void	addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
 		int		shortestSpan();
 		int		longestSpan();
 
@@ -39,4 +39,6 @@ class Span
                 return ("More numbers than the container size");
             }
 		};
+
+        void printNumbers() const;
 };
