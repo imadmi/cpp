@@ -1,21 +1,33 @@
 
 #include "easyfind.hpp"
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+int main()
+{
+	try
+	{
+		// vector
+    	std::vector<int> myVector = {1, 2, 3};
+		easyfind(myVector, 1);
 
-int main() {
-    std::vector<int> myVector = {1, 2, 3, 4, 5};
-    int value = 3;
+		//dearrayque
+		std::array<int, 3> myarray = {1, 2, 3};
+		easyfind(myarray, 2);
 
-    // Find 'value' in the vector using std::find()
-    std::vector<int>::iterator result = std::find(myVector.begin(), myVector.end(), value);
-    if (result != myVector.end()) {
-        std::cout << "Value " << value << " found at index " << (result - myVector.begin()) << std::endl;
-    } else {
-        std::cout << "Value " << value << " not found!" << std::endl;
-    }
+		// list
+		std::list<int> mylist;
+		mylist.push_back(1);
+		mylist.push_back(2);
+		mylist.push_back(3);
+		easyfind(mylist, 3);
+
+		// lets throw an execption
+		easyfind(myVector, 4);
+
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
     return 0;
 }
