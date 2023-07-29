@@ -1,5 +1,25 @@
-int main(int argc, char const *argv[])
+
+
+#include "MutantStack.hpp"
+
+void p()
 {
-    /* code */
+    system("leaks MutantStack");
+}
+
+int main()
+{
+    // atexit(p);
+
+    MutantStack<int> ds;
+    MutantStack<int> ls(ds);
+
+    ds.push(10);
+    ds.push(20);
+    ds.push(30);
+    ds.push(40);
+
+    // ls(ds);
+    ls = ds;
     return 0;
 }

@@ -6,7 +6,10 @@ int main()
 	try
 	{
 		// vector
-    	std::vector<int> myVector = {1, 2, 3};
+    	std::vector<int> myVector;
+		myVector.push_back(1); 
+		myVector.push_back(2); 
+		myVector.push_back(3); 
 		easyfind(myVector, 1);
 
 		//dearrayque

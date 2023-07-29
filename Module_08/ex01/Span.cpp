@@ -57,7 +57,7 @@ int		Span::shortestSpan()
 	return (shortest);
 }
 
-
+// max_element returns an iterator pointing to the element with the largest value
 int		Span::longestSpan()
 {
 	if (_vector.size() < 2)
