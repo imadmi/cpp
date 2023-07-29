@@ -8,14 +8,6 @@
 #include <list>
 
 
-class do_not_exist: public std::exception
-{
-	virtual const char* what() const throw()
-    {    
-        return (" is not found.");
-    }
-};
-
 template <typename T>
 void    easyfind(T& container_of_int, int int_to_find)
 {
@@ -27,8 +19,7 @@ void    easyfind(T& container_of_int, int int_to_find)
     }
 	else
 	{
-        std::cout << "The Number " << int_to_find;
-        throw do_not_exist();
+        std::cout << "The Number " << int_to_find << " is not found." << std::endl;
     }	
 }
 
