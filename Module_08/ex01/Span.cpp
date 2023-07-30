@@ -31,7 +31,7 @@ Span::~Span()
 void Span::addNumber(int Number)
 {
 	if (_N == _vector.size())
-		throw Span::space_execption();
+		throw space_execption();
 	_vector.push_back(Number);
 }
 
@@ -39,7 +39,7 @@ void Span::addNumber(std::vector<int>::iterator start, std::vector<int>::iterato
 {
 	int dist = std::distance(start, end);
 	if (dist + _vector.size() > _N)
-		throw Span::space_execption();
+		throw space_execption();
 	_vector.insert(_vector.end(), start, end);
 }
 
