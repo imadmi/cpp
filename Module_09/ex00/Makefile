@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(INC)
 	@ $(CC) $(FLAGS) $(OBJ) -o $(NAME)
-	@ clear
+	# @ clear
 	@echo "\033[0;92m./btc :\033[0m"
 
 clean:
