@@ -32,15 +32,15 @@ double Btc::getExchangeRate(std::string date)
         if (isDateValid(date) == TRUE)
         {
           date = date.substr(0, 4) + date.substr(5, 2) + date.substr(8, 2);
-          int i = std::stoul(date);
+          int i = atof(date.c_str());
           std::getline(StringStream, exchangeRate, ',');
-          _data[i] = std::stod(exchangeRate);
+          _data[i] = atof(exchangeRate.c_str());
         }
     }
     data_file.close();
 
 
-    int input = std::stoul(date.substr(0, 4) + date.substr(5, 2) + date.substr(8, 2));
+    int input = atof((date.substr(0, 4) + date.substr(5, 2) + date.substr(8, 2)).c_str());
 
     try
     {

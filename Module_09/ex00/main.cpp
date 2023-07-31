@@ -38,7 +38,7 @@ int isDoubleValid(std::string value)
   }
 
 
-  double DoubleValue = std::stod(value);
+  double DoubleValue = atof(value.c_str());
   if (DoubleValue < 0)
   {
     std::cout << "Error: not a positive number." << std::endl;
@@ -58,57 +58,58 @@ int main(int argc, char *argv[])
 {
   if (argc != 2)
   {
-      std::cerr << "Usage: ./btc <input_file>" << std::endl;
-      return (EXIT_FAILURE);
+    std::cerr << "Usage: ./btc <input_file>" << std::endl;
+    return (EXIT_FAILURE);
   }
+
   try
   {
-      Btc btcExchange;
-      std::ifstream file(argv[1]);
+    Btc btcExchange;
+    std::ifstream file(argv[1]);
 
-      // Check if the file is open
-      if (!file.is_open())
-      {
-          std::cerr << "Input file not found" << std::endl;
-          return (EXIT_FAILURE);
-      }
+    // Check if the file is open
+    if (!file.is_open())
+    {
+        std::cerr << "Input file not found" << std::endl;
+        return (EXIT_FAILURE);
+    }
 
-      // Check if the first line is valid
-      std::string line;
-      std::getline(file, line);
-      if (line != "date | value")
-      {
-          std::cerr << "Invalid input file format" << std::endl;
-          return (EXIT_FAILURE);
-      }
+    // Check if the first line is valid
+    std::string line;
+    std::getline(file, line);
+    if (line != "date | value")
+    {
+        std::cerr << "Invalid input file format" << std::endl;
+        return (EXIT_FAILURE);
+    }
 
-    // Go through the file line by line, and print the exchange rate
-      std::string line1;
-      while (getline(file, line1))
+  // Go through the file line by line, and print the exchange rate
+    std::string line1;
+    while (getline(file, line1))
+    {
+      if (line1 == "")
+        continue;
+      std::stringstream stringstream(line1);
+      std::stringstream str;
+      std::string date;
+      std::string value;
+      std::getline(stringstream, date, ' ');
+      if (isDateValid(date) == FALSE || line1[11] != '|' || line1.size() < 11)
       {
-        if (line1 == "")
+          std::cout << "Error: bad input => " << date << std::endl;
           continue;
-        std::stringstream stringstream(line1);
-        std::string date;
-        std::string value;
-        std::getline(stringstream, date, ' ');
-        if (isDateValid(date) == FALSE || line1[11] != '|' || line1.size() < 11)
-        {
-            std::cout << "Error: bad input => " << date << std::endl;
-            continue;
-        }
-        std::getline(stringstream, value, ' ');
-        std::getline(stringstream, value, ' ');
-        if (isDoubleValid(value) == FALSE)
-        {
-            continue;
-        }
-
-        Btc btc;
-        double newValue = btc.getExchangeRate(date) * std::stod(value);
-        std::cout << date << " => " << value << " = " << newValue << std::endl;
+      }
+      std::getline(stringstream, value, ' ');
+      std::getline(stringstream, value, ' ');
+      if (isDoubleValid(value) == FALSE)
+      {
+          continue;
       }
 
+      Btc btc;
+      double newValue = btc.getExchangeRate(date) * atof(value.c_str());
+      std::cout << date << " => " << value << " = " << newValue << std::endl;
+    }
   }
   catch (std::exception &e)
   {

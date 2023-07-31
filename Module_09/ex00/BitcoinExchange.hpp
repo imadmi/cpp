@@ -5,6 +5,7 @@
 #include <iostream>
 #include <map>
 #include <sstream>
+#include <cstdlib>
 
 #define TRUE 1
 #define FALSE 0
