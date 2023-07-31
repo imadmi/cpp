@@ -37,8 +37,8 @@ double Btc::getExchangeRate(std::string date)
           _data[i] = std::stod(exchangeRate);
         }
     }
-
     data_file.close();
+
 
     int input = std::stoul(date.substr(0, 4) + date.substr(5, 2) + date.substr(8, 2));
 

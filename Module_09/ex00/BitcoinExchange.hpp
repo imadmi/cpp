@@ -13,8 +13,7 @@
 class Btc
 {
 	private:
-		std::map<unsigned int, double> _data;
-		// std::map<std::string, double> _exchangeRates;
+		std::map<int, double> _data;
 
 	public:
 		Btc();
@@ -27,5 +26,3 @@ class Btc
 };
 
 int isDateValid(std::string date);
-
-// std::ostream&	operator<<(std::ostream& o, const Btc& i);
