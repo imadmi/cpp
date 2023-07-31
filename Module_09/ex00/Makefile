@@ -4,7 +4,7 @@ SRC = main.cpp BitcoinExchange.cpp
 OBJ = $(SRC:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 INC = BitcoinExchange.hpp
-NAME = BitcoinExchange
+NAME = btc
 CC = c++
 
 all: $(NAME)
@@ -12,7 +12,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(INC)
 	@ $(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	@ clear
-	@echo "\033[0;92m./BitcoinExchange :\033[0m"
+	@echo "\033[0;92m./btc :\033[0m"
 
 clean:
 	@ rm -f $(OBJ)
