@@ -3,16 +3,17 @@
 
 #include <iostream>
 #include <stack>
+#include <sstream>
+#include <string>
+
+#define TRUE 1
+#define FALSE 0
 
 class RPN
 {
-    private:
-        std::stack<std::string> _data;
-    
     public :
         RPN();
         ~RPN();
         RPN(const RPN& copy);
-        RPN & RPN::operator=(const RPN& copy); 
-
+        RPN & operator=(const RPN& copy); 
 };
