@@ -71,6 +71,12 @@
         "*.tcc": "cpp",
         "clocale": "cpp",
         "numeric": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "__cxx_version": "cpp",
+        "list": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "queue": "cpp"
     }
 }
