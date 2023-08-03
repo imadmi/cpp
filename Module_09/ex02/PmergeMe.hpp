@@ -7,6 +7,5 @@
 #include <vector>
 #include <deque>
 #include <algorithm>
-#include <cstdlib>
-#include <ctime>
-#include <iomanip> 
+
+#define SIZE 5

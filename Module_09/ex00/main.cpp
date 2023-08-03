@@ -1,5 +1,6 @@
 #include "BitcoinExchange.hpp"
 
+
 int isDateValid(std::string date)
 {
   if (date.size() != 10)
@@ -15,7 +16,35 @@ int isDateValid(std::string date)
     if (!isdigit(date[i]))
       return (FALSE);
   }
+
+  std::string yyyy;
+  std::string mm;
+  std::string dd;
+  std::stringstream sstringstream(date);
+  std::getline(sstringstream, yyyy, '-');
+  std::getline(sstringstream, mm, '-');
+  std::getline(sstringstream, dd, ' ');
+
+  // std::cout << "'" << yyyy << "-" <<mm << "-" << dd << "'" << std::flush;
+
+  if (atoi(yyyy.c_str()) > 2023 || atoi(yyyy.c_str()) < 2009 || atoi(mm.c_str()) > 12 || atoi(mm.c_str()) < 1 || atoi(dd.c_str()) > 31)
+    return (FALSE);
+
+  int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  if (atoi(mm.c_str()) == 2 && (atoi(yyyy.c_str()) % 4 == 0))
+  {
+      if (atoi(dd.c_str()) > 29)
+      {
+        return (FALSE);
+      }
+  }
+  else if (atoi(dd.c_str()) > daysInMonth[atoi(mm.c_str())])
+  {
+      return (FALSE);
+  }
+
   return (TRUE);
+
 }
 
 int isDoubleValid(std::string value)
@@ -53,6 +82,28 @@ int isDoubleValid(std::string value)
 
   return (TRUE);
 }
+
+std::string trimString(const std::string& input)
+{
+    std::string trimmedString = input;
+
+    int start = 0;
+    while (start < trimmedString.length() && std::isspace(trimmedString[start]))
+    {
+        ++start;
+    }
+    trimmedString.erase(0, start);
+
+    int end = trimmedString.length() - 1;
+    while (end > 0 && std::isspace(trimmedString[end]))
+    {
+        --end;
+    }
+    trimmedString.erase(end + 1);
+
+    return (trimmedString);
+}
+
 
 int main(int argc, char *argv[])
 {
@@ -94,27 +145,36 @@ int main(int argc, char *argv[])
       std::string date;
       std::string value;
       std::getline(stringstream, date, ' ');
-      if (isDateValid(date) == FALSE || line1[11] != '|' || line1.size() < 11)
+      // if (isDateValid(date) == FALSE || line1[11] != '|' || line1.size() < 11)
+      if (isDateValid(date) == FALSE || line1.size() < 11)
       {
           std::cout << "Error: bad input => " << date << std::endl;
           continue;
       }
-      std::getline(stringstream, value, ' ');
-      std::getline(stringstream, value, ' ');
-      if (isDoubleValid(value) == FALSE)
+
+      std::getline(stringstream, value, '|');
+      std::getline(stringstream, value, '\n');
+      std::string value1 = trimString(value);
+
+      if (isDoubleValid(value1) == FALSE)
       {
           continue;
       }
 
       Btc btc;
-      double newValue = btc.getExchangeRate(date) * atof(value.c_str());
-      std::cout << date << " => " << value << " = " << newValue << std::endl;
+      double newValue = btc.getExchangeRate(date) * atof(value1.c_str());
+      std::cout << date << " => " << value1 << " = " << newValue << std::endl;
     }
   }
   catch (std::exception &e)
   {
       std::cerr << e.what() << std::endl;
   }
+  catch (...)
+  {
+      std::cerr << "ERROR" << std::endl;
+  }
 
   return (EXIT_SUCCESS);
 }
+

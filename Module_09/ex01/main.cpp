@@ -15,8 +15,10 @@ int calculate(int a, int b, char op)
 		return (a - b);
 	if (op == '*')
 		return (a * b);
-	if (op == '/')
+	if (op == '/' && b != 0)
 		return (a / b);
+	else 
+		throw "";
 	return (0);
 }
 
@@ -41,8 +43,9 @@ int calculator(char* expr)
                 throw "";
             
 			int b = calc_stack.top();
-            int a = calc_stack.top();
             calc_stack.pop();
+            
+			int a = calc_stack.top();
             calc_stack.pop();
             
 			int result = calculate(a, b, exc[i]);
@@ -81,3 +84,4 @@ int main(int argc, char* argv[])
 
 	return (EXIT_SUCCESS);
 }
+// ./RPN "7 7 - 1 +"
