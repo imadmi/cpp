@@ -8,8 +8,7 @@ double Btc::getExchangeRate(std::string date)
 {
     std::ifstream data_file;
     
-    // data_file.open("data.csv");
-    data_file.open("/Users/imimouni/Downloads/cpp_09/data.csv");
+    data_file.open(CSVFILEPATH);
 
     if (!data_file.is_open())
     {

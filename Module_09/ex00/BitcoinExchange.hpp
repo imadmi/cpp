@@ -10,6 +10,7 @@
 #define TRUE 1
 #define FALSE 0
 
+#define CSVFILEPATH "/Users/imimouni/Downloads/cpp_09/data.csv"
 
 class Btc
 {
