@@ -10,7 +10,7 @@
 #define TRUE 1
 #define FALSE 0
 
-#define CSVFILEPATH "/Users/imimouni/Downloads/cpp_09/data.csv"
+#define CSVFILEPATH "/Users/imimouni/Desktop/cpp/Module_09/ex00/data.csv"
 
 class Btc
 {
@@ -28,3 +28,4 @@ class Btc
 };
 
 int isDateValid(std::string date);
+int isDoubleValid(std::string value);

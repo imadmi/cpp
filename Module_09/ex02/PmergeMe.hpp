@@ -8,4 +8,4 @@
 #include <deque>
 #include <algorithm>
 
-#define SIZE 5
+#define SIZE 3
