@@ -7,30 +7,33 @@
 int main()
 {
     try {
-        // Span span(19);
+        Span span(19);
         
-        // span.addNumber(5);
-        // span.addNumber(10);
-        // span.addNumber(20);
-        // span.addNumber(30);
-        // span.addNumber(40);
+        span.addNumber(5);
+        span.addNumber(10);
+        span.addNumber(20);
+        span.addNumber(30);
+        span.addNumber(40);
 
-        // std::cout << "Longest span: " << span.longestSpan() << std::endl;
-        // std::cout << "shortest span: " << span.shortestSpan() << std::endl;
+        std::cout << "Longest span: " << span.longestSpan() << std::endl;
+        std::cout << "shortest span: " << span.shortestSpan() << std::endl;
 
-        // std::vector<int> numbersToAdd = {50, 60, 70};
-        // span.addNumber(numbersToAdd.begin(), numbersToAdd.end());
+        std::vector<int> numbersToAdd;
+        numbersToAdd.push_back(50);
+        numbersToAdd.push_back(60);
+        numbersToAdd.push_back(70);
+        span.addNumber(numbersToAdd.begin(), numbersToAdd.end());
         
-        // span.printNumbers();
+        span.printNumbers();
 
         //==================================//
 
-        Span span(100000);
-        for (int i = 0; i < 100000; ++i)
-        {
-            span.addNumber(i);
-        }
-        span.printNumbers();
+        // Span span(100000);
+        // for (int i = 0; i < 100000; ++i)
+        // {
+        //     span.addNumber(i);
+        // }
+        // span.printNumbers();
     }
     catch (std::exception& e)
     {
